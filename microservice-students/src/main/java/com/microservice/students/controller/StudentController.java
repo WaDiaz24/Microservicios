@@ -11,12 +11,12 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/student")
 public class StudentController {
 
     private final StudentService studentService;
 
-    @PostMapping("/create")
+    @PostMapping("/save")
     public ResponseEntity<Student> createStudent(@RequestBody Student student) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(studentService.createStudent(student));

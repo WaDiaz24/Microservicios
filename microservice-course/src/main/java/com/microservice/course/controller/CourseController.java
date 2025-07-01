@@ -11,7 +11,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/courses")
+@RequestMapping("/api/course")
 public class CourseController {
 
     private final CourseService courseService;
@@ -31,7 +31,7 @@ public class CourseController {
         return ResponseEntity.ok(courseService.getAllCourses());
     }
 
-    @GetMapping("/students/{courseId}")
+    @GetMapping("/{courseId}/students")
     public ResponseEntity<?> getStudentsByCourseId(@PathVariable Long courseId) {
         return ResponseEntity.ok(courseService.getStudentsByCourseId(courseId));
     }
